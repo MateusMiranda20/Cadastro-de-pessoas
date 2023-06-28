@@ -2,6 +2,7 @@ import React from "react";
 
 import People from './assets/people.png'
 import Seta from './assets/seta.svg'
+import Lixeira from './assets/lixeira.svg'
 
 import {
   Container,
@@ -11,6 +12,7 @@ import {
   InputLabel,
   Input,
   Button,
+  User
 } from "./styles";
 
 function App() {
@@ -23,7 +25,7 @@ function App() {
     <Container>
       <Image alt="logo-imagem" src={People} />
       <ContainerItens>
-        <H1>Olá</H1>
+        <H1>Olá!</H1>
 
         <InputLabel>Nome</InputLabel>
         <Input placeholder="Nome" />
@@ -37,11 +39,12 @@ function App() {
         </Button>
 
         <ul>
-          { users.map(user => (
-            <li key={user.id}>
-            {user.name} - {user.age}
-            </li>
-           ))
+          {users.map(user => (
+            <User key={user.id}>
+              <p>{user.name}</p><p>{user.age}</p>
+              <button><img src={Lixeira} alt="lixeira" /></button>
+            </User>
+          ))
           }
         </ul>
       </ContainerItens>
