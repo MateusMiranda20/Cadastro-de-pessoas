@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import People from './assets/people.png'
 import Seta from './assets/seta.svg'
@@ -12,14 +12,35 @@ import {
   InputLabel,
   Input,
   Button,
-  User
+  User,
 } from "./styles";
 
 function App() {
-  const users = [
-    { id: Math.random(), name: "Rodolfo", age: 28 },
-    { id: Math.random(), name: "Maria", age: 23 },
-  ];
+  //const users = [];
+
+  const [users, setUsers] = useState([]);
+  const [name,setName] = useState();
+  const [age, setAge] = useState();
+  //Um estado no React é imutavel
+
+  //ESTADO -> VARIAVEL 
+
+  //REACT HOOKS -> FERRAMENTAS AUXILIARES 
+
+  function AddNewUser() {
+  setUsers([{id: Math.random(), name, age}])
+    
+  };
+
+  function changeName(event) {
+    setName(event.target.value)
+  };
+
+  function changeAge(event) {
+    setAge(event.target.value)
+  };
+
+
 
   return (
     <Container>
@@ -28,21 +49,23 @@ function App() {
         <H1>Olá!</H1>
 
         <InputLabel>Nome</InputLabel>
-        <Input placeholder="Nome" />
+        <Input onChange={changeName} placeholder="Nome" />
 
         <InputLabel>Idade</InputLabel>
-        <Input placeholder="Idade" />
+        <Input onChange={changeAge} placeholder="Idade" />
 
-        <Button>
+        <Button onClick={AddNewUser}>
           Cadastrar
           <img alt="seta" src={Seta} />
         </Button>
 
         <ul>
-          {users.map(user => (
+          {users.map((user) => (
             <User key={user.id}>
-              <p>{user.name}</p><p>{user.age}</p>
-              <button><img src={Lixeira} alt="lixeira" /></button>
+              <p>{user.name}</p> <p>{user.age}</p>
+              <button>
+                <img src={Lixeira} alt="lixeira" />
+              </button>
             </User>
           ))
           }
