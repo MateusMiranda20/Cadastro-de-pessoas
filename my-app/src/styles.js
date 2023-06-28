@@ -60,7 +60,7 @@ export const Input = styled.input`
     font-weight: normal;
     line-height: 18px;
     
-    color: #ffff;
+    color: #000;
 
 `;
 
@@ -100,7 +100,7 @@ export const User = styled.li`
     background: linear-gradient(157.44deg, rgba(255, 255, 255, 0.6) 0.84%, rgba(255, 255, 255, 0.6) 0.85%, rgba(255, 255, 255, 0.15) 100%);
     
     width: 342px;
-    height: 58px;
+    height: 40px;
 
     border: none;
     outline: none;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 import People from './assets/people.png'
 import Seta from './assets/seta.svg'
@@ -19,8 +19,8 @@ function App() {
   //const users = [];
 
   const [users, setUsers] = useState([]);
-  const [name,setName] = useState();
-  const [age, setAge] = useState();
+  const inputName = useRef()
+  const inputAge = useRef()
   //Um estado no React é imutavel
 
   //ESTADO -> VARIAVEL 
@@ -28,20 +28,23 @@ function App() {
   //REACT HOOKS -> FERRAMENTAS AUXILIARES 
 
   function AddNewUser() {
-  setUsers([... users,{id: Math.random(), name, age}])
-    
+    setUsers([
+      ...users,
+      {
+        id: Math.random(),
+        name: inputName.current.value,
+        age: inputAge.current.value,
+      },
+    ]);
+
   };
   /* Para fazer que funcione o codigo cadastrand -o um usuario,
     e depois outro usaremos o SPREAD OPERATION -> ...
   */
-  function changeName(event) {
-    setName(event.target.value)
+  function deleterUser(userId) {
+    const newUser = users.filter((user) => user.id !== userId)
+    setUsers(newUser)
   };
-
-  function changeAge(event) {
-    setAge(event.target.value)
-  };
-
 
 
   return (
@@ -51,10 +54,10 @@ function App() {
         <H1>Olá!</H1>
 
         <InputLabel>Nome</InputLabel>
-        <Input onChange={changeName} placeholder="Nome" />
+        <Input ref={inputName} placeholder="Nome" />
 
         <InputLabel>Idade</InputLabel>
-        <Input onChange={changeAge} placeholder="Idade" />
+        <Input ref={inputAge} placeholder="Idade" />
 
         <Button onClick={AddNewUser}>
           Cadastrar
@@ -65,7 +68,7 @@ function App() {
           {users.map((user) => (
             <User key={user.id}>
               <p>{user.name}</p> <p>{user.age}</p>
-              <button>
+              <button onClick={() => deleterUser(user.id)} >
                 <img src={Lixeira} alt="lixeira" />
               </button>
             </User>
@@ -78,3 +81,6 @@ function App() {
 }
 
 export default App
+
+// button onClick={() => deleterUser(user.id)}
+//Esse trecho so é chamado assim pra funçaõ noa entrar direto
