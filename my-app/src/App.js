@@ -14,10 +14,14 @@ import {
 } from "./styles";
 
 function App() {
+  const users = [
+    { id: Math.random(), name: "Rodolfo", age: 28 },
+    { id: Math.random(), name: "Maria", age: 23 },
+  ];
 
   return (
     <Container>
-      <Image alt="logo-imagem" src={People}/>
+      <Image alt="logo-imagem" src={People} />
       <ContainerItens>
         <H1>Olá</H1>
 
@@ -29,11 +33,19 @@ function App() {
 
         <Button>
           Cadastrar
-          <img alt="seta" src= {Seta} />
+          <img alt="seta" src={Seta} />
         </Button>
 
+        <ul>
+          { users.map(user => (
+            <li key={user.id}>
+            {user.name} - {user.age}
+            </li>
+           ))
+          }
+        </ul>
       </ContainerItens>
-    </Container>
+    </Container >
   );
 }
 

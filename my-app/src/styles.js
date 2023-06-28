@@ -11,7 +11,8 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.img`
-    margin-top: 30px;
+    margin-top: 20px;
+    width: 12rem;
 `;
 export const ContainerItens = styled.div`
     background: linear-gradient(157.44deg, rgba(255, 255, 255, 0.6) 0.84%, rgba(255, 255, 255, 0.6) 0.85%, rgba(255, 255, 255, 0.15) 100%);
@@ -20,6 +21,7 @@ export const ContainerItens = styled.div`
     margin-top: 15px;
     display: flex;
     flex-direction: column;
+    height: 100vh;
 `;
 
 export const H1 = styled.h1`
@@ -65,7 +67,7 @@ export const Input = styled.input`
 
 export const Button = styled.button`
     width: 342px;
-    height: 74px;
+    height: 60px;
 
     background: rgba(0, 0, 0, 0.8);
     border-radius: 14px;
