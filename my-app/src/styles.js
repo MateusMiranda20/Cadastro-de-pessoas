@@ -7,6 +7,7 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
+    height: 100vh;
 `;
 
 export const Image = styled.img`
@@ -20,7 +21,7 @@ export const ContainerItens = styled.div`
     margin-top: 15px;
     display: flex;
     flex-direction: column;
-    
+    height: 100vh;
 `;
 
 export const H1 = styled.h1`
