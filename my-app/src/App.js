@@ -28,10 +28,12 @@ function App() {
   //REACT HOOKS -> FERRAMENTAS AUXILIARES 
 
   function AddNewUser() {
-  setUsers([{id: Math.random(), name, age}])
+  setUsers([... users,{id: Math.random(), name, age}])
     
   };
-
+  /* Para fazer que funcione o codigo cadastrand -o um usuario,
+    e depois outro usaremos o SPREAD OPERATION -> ...
+  */
   function changeName(event) {
     setName(event.target.value)
   };
