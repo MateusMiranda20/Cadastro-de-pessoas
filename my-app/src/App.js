@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
 
+import axios from 'axios'
+
 import People from './assets/people.png'
 import Seta from './assets/seta.svg'
 import Lixeira from './assets/lixeira.svg'
@@ -27,15 +29,23 @@ function App() {
 
   //REACT HOOKS -> FERRAMENTAS AUXILIARES 
 
-  function AddNewUser() {
-    setUsers([
-      ...users,
-      {
-        id: Math.random(),
-        name: inputName.current.value,
-        age: inputAge.current.value,
-      },
-    ]);
+  async function AddNewUser() {
+
+    const data = await axios.post("http://localhost:3001/users", {
+      name: inputName.current.value,
+      age: inputAge.current.value
+    });
+
+    console.log(data)
+
+    //setUsers([
+    // ...users,
+    //{
+    //   id: Math.random(),
+    //  name: inputName.current.value,
+    //  age: inputAge.current.value,
+    //  },
+    //]);
 
   };
   /* Para fazer que funcione o codigo cadastrand -o um usuario,
