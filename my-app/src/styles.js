@@ -92,7 +92,7 @@ export const User = styled.li`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 55px;
+    height: 65px;
     margin-top: 20px;
 
     box-shadow: 0px 4px 4px 0px hsba(0, 0%, 0%, 0.25);
@@ -111,6 +111,7 @@ export const User = styled.li`
         font-size: 18px;
         font-weight: normal;
         line-height: 18px;
+        color: #fff;
     }
 
     button{
