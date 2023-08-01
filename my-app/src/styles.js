@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import background from './assets/imagem fundo 1.svg'
 
 export const Container = styled.div`
-    background: url("${background}");
+    //background: url("${background}");
+    background: linear-gradient(104deg, rgba(3,246,51,1) 0%, rgba(136,194,148,1) 100%);
     background-size: cover;
     display: flex;
     align-items: center;
@@ -15,7 +16,7 @@ export const Image = styled.img`
     width: 12rem;
 `;
 export const ContainerItens = styled.div`
-    background: linear-gradient(157.44deg, rgba(255, 255, 255, 0.6) 0.84%, rgba(255, 255, 255, 0.6) 0.85%, rgba(255, 255, 255, 0.15) 100%);
+    background: linear-gradient(157.44deg, rgba(255, 255, 255, 0.2) 0.24%, rgba(255, 255, 255, 0.90) 0.15%, rgba(255, 255, 255, 0.01) 100%);
     border-radius: 51px 51px 0px 0px;
     padding: 25px 25px;
     margin-top: 15px;
@@ -29,7 +30,7 @@ export const H1 = styled.h1`
     font-weight: bold;
     font-size: 34px;
     text-align: center;
-    color: #ffff;
+    color: #000;
     margin-bottom: 80px;
 `;
 export const InputLabel = styled.p`
@@ -40,7 +41,7 @@ export const InputLabel = styled.p`
 
     margin-left: 25px;
 
-    color: #eeeeee;
+    color: #000;
 `;
 
 export const Input = styled.input`
@@ -85,7 +86,7 @@ export const Button = styled.button`
     gap: 10px;
 
     color: #ffff
-    ;
+
 `;
 
 export const User = styled.li`
@@ -100,18 +101,18 @@ export const User = styled.li`
     background: linear-gradient(157.44deg, rgba(255, 255, 255, 0.6) 0.84%, rgba(255, 255, 255, 0.6) 0.85%, rgba(255, 255, 255, 0.15) 100%);
     
     width: 342px;
-    height: 40px;
+    height: 46px;
 
     border: none;
     outline: none;
 
-    color: #fff;
+    color: #000;
 
     p{
         font-size: 18px;
         font-weight: normal;
         line-height: 18px;
-        color: #fff;
+        color: #000;
     }
 
     button{
