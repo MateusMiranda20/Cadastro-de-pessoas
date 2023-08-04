@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import background from '../../assets/imagem fundo 1.svg'
+import {Link} from "react-router-dom"
 
 export const Container = styled.div`
     //background: url("${background}");
@@ -12,8 +13,8 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.img`
-    margin-top: 20px;
-    width: 12rem;
+    margin-top: 15px;
+    width: 10rem;
 `;
 export const ContainerItens = styled.div`
     background: linear-gradient(157.44deg, rgba(255, 255, 255, 0.2) 0.24%, rgba(255, 255, 255, 0.90) 0.15%, rgba(255, 255, 255, 0.01) 100%);
@@ -36,10 +37,11 @@ export const H1 = styled.h1`
 
 
 
-export const Button = styled.button`
+export const Button = styled(Link)`
     width: 342px;
     height: 60px;
 
+    margin-top: 50px;
     background: transparent;
     border-radius: 14px;
     border: 1px solid #ffffff;

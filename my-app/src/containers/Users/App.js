@@ -6,27 +6,19 @@ import People from "../../assets/People talking.png";
 import Seta from "../../assets/seta.svg";
 import Lixeira from "../../assets/lixeira.svg";
 
-import {
-  Container,
-  H1,
-  Image,
-  ContainerItens,
-  Button,
-  User,
-} from "./styles";
+import { Container, H1, Image, ContainerItens, Button, User } from "./styles";
 
 function Users() {
   //const users = [];
   const [users, setUsers] = useState([]); // assim que cria uma estado no React E UM REACT HOOKS
-  
-    /* Para fazer que funcione o codigo cadastrando um usuario,
+
+  /* Para fazer que funcione o codigo cadastrando um usuario,
         e depois outro usaremos o SPREAD OPERATION -> ...
     */
-    // Vamos aprender um REACT HOOK => useEffect (Efeito Colateral)
-    // Temos dois jeitos de usar o useEffect
-    // 1- A minha aplicação( A PAGINÁ CARREGOU, O useEffect é chamado)
-    // 2- Quando um estado que está no array de dependencia do useEffect é alterado
-  
+  // Vamos aprender um REACT HOOK => useEffect (Efeito Colateral)
+  // Temos dois jeitos de usar o useEffect
+  // 1- A minha aplicação( A PAGINÁ CARREGOU, O useEffect é chamado)
+  // 2- Quando um estado que está no array de dependencia do useEffect é alterado
 
   useEffect(() => {
     async function fetchUsers() {
@@ -46,8 +38,6 @@ function Users() {
     setUsers(newUser);
   }
 
- 
-
   return (
     <Container>
       <Image alt="Logo-Imagem" src={People} />
@@ -65,8 +55,8 @@ function Users() {
           ))}
         </ul>
 
-        <Button>
-         <img alt="seta" src={Seta} /> Voltar
+        <Button to="/">
+          <img alt="seta" src={Seta} /> Voltar
         </Button>
       </ContainerItens>
     </Container>
