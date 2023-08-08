@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { useNavigate } from "react-router";
 import axios from "axios";
 
 import People from "../../assets/People talking.png";
@@ -11,6 +11,8 @@ import { Container, H1, Image, ContainerItens, Button, User } from "./styles";
 function Users() {
   //const users = [];
   const [users, setUsers] = useState([]); // assim que cria uma estado no React E UM REACT HOOKS
+
+  const navigate = useNavigate();
 
   /* Para fazer que funcione o codigo cadastrando um usuario,
         e depois outro usaremos o SPREAD OPERATION -> ...
@@ -29,6 +31,10 @@ function Users() {
 
     fetchUsers();
   }, []);
+
+  function goBackPage() {
+    navigate("/");
+  }
 
   async function deleterUser(userId) {
     await axios.delete(`http://localhost:3003/users/${userId}`);
@@ -55,7 +61,7 @@ function Users() {
           ))}
         </ul>
 
-        <Button to="/">
+        <Button onClick={goBackPage}>
           <img alt="seta" src={Seta} /> Voltar
         </Button>
       </ContainerItens>

@@ -1,17 +1,18 @@
-import React, { useState, useRef, } from "react";
-
+import React, { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import People from "../../assets/people.png";
 import Seta from "../../assets/seta.svg";
 
+
 import {
   Container,
-  H1,
   Image,
   ContainerItens,
   InputLabel,
   Input,
+  H1,
   Button,
 } from "./styles";
 
@@ -21,6 +22,8 @@ function App() {
   const inputName = useRef();
   const inputAge = useRef();
 
+  const navigate = useNavigate();
+
   async function addNewUser() {
     const { data: newUsers } = await axios.post("http://localhost:3003/users", {
       name: inputName.current.value,
@@ -29,6 +32,9 @@ function App() {
     console.log(newUsers);
 
     setUsers([...users, newUsers]);
+
+    
+    navigate("/usuarios")
     /* Para fazer que funcione o codigo cadastrando um usuario,
         e depois outro usaremos o SPREAD OPERATION -> ...
     */
@@ -38,7 +44,7 @@ function App() {
     // 2- Quando um estado que está no array de dependencia do useEffect é alterado
   }
 
-
+  
   return (
     <Container>
       <Image alt="Logo-Imagem" src={People} />
@@ -51,7 +57,7 @@ function App() {
         <InputLabel>Age</InputLabel>
         <Input ref={inputAge} placeholder="Age" />
 
-        <Button to="/usuarios" onClick={addNewUser}>
+        <Button onClick={addNewUser}>
           Cadastrar <img alt="seta" src={Seta} />
         </Button>
       </ContainerItens>

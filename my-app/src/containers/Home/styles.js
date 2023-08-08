@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import background from '../../assets/imagem fundo 1.svg'
-import {Link} from "react-router-dom"
 
 export const Container = styled.div`
     //background: url("${background}");
@@ -30,10 +29,14 @@ export const H1 = styled.h1`
     font-style: normal;
     font-weight: bold;
     font-size: 34px;
+    line-height: 40px;
     text-align: center;
+
     color: #000;
-    margin-bottom: 80px;
-`;
+
+    margin-bottom: 60px;
+
+`
 export const InputLabel = styled.p`
     font-style: normal;
     font-weight: bold;
@@ -66,7 +69,7 @@ export const Input = styled.input`
 
 `;
 
-export const Button = styled(Link)`
+export const Button = styled.button`
     width: 342px;
     height: 60px;
 
