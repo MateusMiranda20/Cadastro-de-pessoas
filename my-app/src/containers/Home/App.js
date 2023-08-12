@@ -5,14 +5,14 @@ import axios from "axios";
 import People from "../../assets/people.png";
 import Seta from "../../assets/seta.svg";
 
+import H1 from "../../components/Title/styles";
+import ContainerItens from "../../components/ContainerItens/App";
 
 import {
   Container,
   Image,
-  ContainerItens,
   InputLabel,
   Input,
-  H1,
   Button,
 } from "./styles";
 
@@ -44,12 +44,12 @@ function App() {
     // 2- Quando um estado que está no array de dependencia do useEffect é alterado
   }
 
-  
+  // Props -> Propriedade
   return (
     <Container>
       <Image alt="Logo-Imagem" src={People} />
       <ContainerItens>
-        <H1>Olá</H1>
+        <H1 anacate={"Meu nome não e"}>Olá</H1>
 
         <InputLabel>Name</InputLabel>
         <Input ref={inputName} placeholder="Name" />

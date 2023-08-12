@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import axios from "axios";
+ 
+import H1 from "../../components/Title/styles";
+import ContainerItens from "../../components/ContainerItens/style";
 
 import People from "../../assets/People talking.png";
 import Seta from "../../assets/seta.svg";
 import Lixeira from "../../assets/lixeira.svg";
 
-import { Container, H1, Image, ContainerItens, Button, User } from "./styles";
+import { Container, Image, Button, User } from "./styles";
 
 function Users() {
   //const users = [];
@@ -47,7 +50,7 @@ function Users() {
   return (
     <Container>
       <Image alt="Logo-Imagem" src={People} />
-      <ContainerItens>
+      <ContainerItens isblu={true}>
         <H1>Usuários</H1>
 
         <ul>

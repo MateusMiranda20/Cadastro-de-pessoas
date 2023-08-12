@@ -16,26 +16,7 @@ export const Image = styled.img`
     margin-top: 15px;
     width: 180px;
 `;
-export const ContainerItens = styled.div`
-    background: linear-gradient(157.44deg, rgba(255, 255, 255, 0.2) 0.24%, rgba(255, 255, 255, 0.90) 0.15%, rgba(255, 255, 255, 0.01) 100%);
-    border-radius: 51px 51px 0px 0px;
-    padding: 25px 25px;
-    margin-top: 15px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    min-height: 100vh;
-    min-height: calc(100vh - 210px);
-`;
 
-export const H1 = styled.h1`
-    font-style: normal;
-    font-weight: bold;
-    font-size: 34px;
-    text-align: center;
-    color: #000;
-    margin-bottom: 80px;
-`;
 
 
 
