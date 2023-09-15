@@ -25,7 +25,7 @@ function App() {
   const navigate = useNavigate();
 
   async function addNewUser() {
-    const { data: newUsers } = await axios.post("http://localhost:3003/users", {
+    const { data: newUsers } = await axios.post("http://localhost:3005/users", {
       name: inputName.current.value,
       age: inputAge.current.value,
     });

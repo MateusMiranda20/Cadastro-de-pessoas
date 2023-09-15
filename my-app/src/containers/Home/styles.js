@@ -3,7 +3,7 @@ import background from '../../assets/imagem fundo 1.svg'
 
 export const Container = styled.div`
     //background: url("${background}");
-    background: linear-gradient(104deg, rgba(3,246,51,1) 0%, rgba(136,194,148,1) 100%);
+    background: linear-gradient(104deg, rgba(3,246,51,1) 0%, rgba(36,194,148,1) 100%);
     background-size: cover;
     display: flex;
     align-items: center;
