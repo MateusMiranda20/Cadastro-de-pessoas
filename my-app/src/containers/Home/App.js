@@ -24,8 +24,10 @@ function App() {
 
   const navigate = useNavigate();
 
+  const baseUrl = "https://project-node-ashy.vercel.app"
+
   async function addNewUser() {
-    const { data: newUsers } = await axios.post("http://localhost:3003/users", {
+    const { data: newUsers } = await axios.post(`${baseUrl}/users`, {
       name: inputName.current.value,
       age: inputAge.current.value,
     });

@@ -25,9 +25,11 @@ function Users() {
   // 1- A minha aplicação( A PAGINÁ CARREGOU, O useEffect é chamado)
   // 2- Quando um estado que está no array de dependencia do useEffect é alterado
 
+  const baseUrl = "https://project-node-ashy.vercel.app"
+
   useEffect(() => {
     async function fetchUsers() {
-      const { data: newUser } = await axios.get("http://localhost:3003/users");
+      const { data: newUser } = await axios.get(`${baseUrl}/users`);
 
       setUsers(newUser);
     }
@@ -40,7 +42,7 @@ function Users() {
   }
 
   async function deleterUser(userId) {
-    await axios.delete(`http://localhost:3003/users/${userId}`);
+    await axios.delete(`${baseUrl}/users/${userId}`);
 
     const newUser = users.filter((user) => user.id !== userId);
 
